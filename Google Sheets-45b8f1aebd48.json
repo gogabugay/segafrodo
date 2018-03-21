@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "autonomous-yeti-198708",
+  "private_key_id": "45b8f1aebd480c404c669562a916d06ebc27ed45",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQClouT1eDeS8SkW\nPHEHzPZ7WYmdj+tfeUxF+LAFdvD673/4YgoEfBKCbLjaYLGIuewdDGIQSocXNf3D\ngWboeTBNj7xMipxuOGsSApYfU1B8wH23GMoBHs9ck/N2qlnTDktj3sFERHJBlldC\n1pqIJzzqWSnTfBDRvlX/5UoSK7T5Cl1XRhSEUBBzdGeYJjtHPTnohu0zsSO+R4+s\nKXws9CGDkaiU/UVjQnhehPaEWy8D8PXiDf9JO8T5ZitTv1ZTa5tDyydKjS3ZTDmI\nOFE6KztJ+hGJq8VNwSNld6Oy08Q9y1BBV5tJqb8ucZgrtQTGC4/uoX1pAT1YLCKF\nh0z/nurdAgMBAAECggEABLSQsAd6/q3ipqrPZDMWonDr96GlxFfQCqHSsEkNdfd1\nSXNRiQiURwe7JZr/GBz9/+JA6+kOFuL2A0aLC5obvOxTI1KBuKDaK9AOfzPQ8sZO\nG/Q0kt0S83SRg0K6HASJMDxc/ak7HLFeZ7vsdmc09AxV45ff63FuhH85QDRlJvjw\ndEfiQun3zjTHOBrE3osmU+PjPhAoCAEtfb8pseu54nTfG0Ug/Lp0EsgYEHHktIGB\nAnMAVKI7F5llwvtlhO7vUYx6iDtze3uqz6S9BhDrcjI/JtZu5GycV8Qvd1sTQu49\nGuJF70P+he2XwQrJHSgj9h7U6M7IckcVOiA7LJ5t6QKBgQDOh8Br+sSMZce4xZLy\neIKbg8pe/RJFSM1dFvCYZhhgiiLcfQZUvHoDXZnn+OjWhrOFPNkMXYHKb+BblEJe\n0biLGQjCxPVHtLWeYLYBN8dOuDs+0AQLSbc7KZK79ppKJL56DKiUnvfpaihLUDA3\nTTApj12Z56bOtoyN9U3kZkWDZQKBgQDNT4/CWOfJMcrgIl0/ntcZl6/aOd2pU1Af\nIuZlDezL++g0nMMZgpfOuklNp3gZqcwZcHASbN6gh3YnsvQUk/WmUyUcMxe2/Nz3\n29cPt97RSwHGTcVTzOYVsj9rmM+vYVfo2vGsFHruSaZ4HmAIb2/1NDheWMwUWdd5\nuJ9CL95eGQKBgFB12qU2oPQBgvmdH06PXHKxuVmgRknvvvIRSdJVlBGoP0SfAKRq\neS5ufNM+yZcqCy5RMk367+GqDEIhVGoUUkz+h8c5bEVvRYJaMw3uaRtl8s7Zw3mS\nUmweGihYPmu8POjXnaWo+PRagzA0IVSqIaVPUSvwb7AAtmlns9zTaylxAoGAWTVE\nxbFTpTwZZqIH2mjuFZSvOCcEhVpJ6f2EFkyio09ladbjfuYbiBuxVih6Ksx4fmU4\njQj5As9ZK466N2bCye4+pa4dk8jzSk8fdxjxnAb3Um7gWrUhFDRLEjlnpFCrneXk\nNF0BvSALUQ4BtCiXgPebtoLmycDvu1fY+y1JdaECgYASNn0t0GxE1bzm8STIX17Z\nLL8bSAbO12f/kSR4wKlpw6UaUmV2EYLJF+MKUgnm80mVH+jKjCU+sUOlJESxlTCh\nl3vs+s0Pj7iunm1Falr4N7pTBZdiQyt4TUuCEJTLUR8vawMe7tUgcNgp3jSahnuZ\nYnyB4+HB3DfkkTmTy6Q/5g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "segafredo@autonomous-yeti-198708.iam.gserviceaccount.com",
+  "client_id": "105297361740021304199",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/segafredo%40autonomous-yeti-198708.iam.gserviceaccount.com"
+}
