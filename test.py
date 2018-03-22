@@ -3,19 +3,41 @@ import pygsheets
 gc = pygsheets.authorize(outh_file='client_secretxxx.json')
 #gc = pygsheets.authorize(service_file='service_creds.json')
 # Open spreadsheet and then workseet
-sh = gc.open('Segafredo_test')
+sh = gc.open('Copy of Segafredo')
 
+alphabet = {1:'A', 2:'B', 3:'C', 4:'D', 5:'E', 6:'F', 7:'G', 8:'H', 9:'I', 10:'J', 11:'K', 12:'L', 13:'M', 14:'N',
+15:'O', 16:'P', 17:'Q', 18:'R', 19:'S', 20:'T', 21: 'U', 22:'V', 23:'W', 24:'X', 25:'Y', 26:'Z', 27:'AA', 28:'AB', 29:'AC',
+30:'AD', 31:'AE', 32:'AF', 33:'AG', 34:'AH', 35:'AI', 36:'AJ', 37:'AK', 38:'AL', 39:'AM', 40:'AN', 41:'AO', 42:'AP'}
 
 wks = sh[5]
-positions=wks.range('A2:AP2')
-est=wks.get_values('G3','AP3', include_empty=True)
+cities = wks.get_values('A3','A30')
+stores = wks.get_values('B3', 'B30')
+
+positions=wks.get_values('G2','AP2')
+positions = positions[0]
+count=0
+for count in range (1,27):
+    netu=[]
+    est=wks.get_values('G'+str(count),'AP'+str(count), include_empty=True)
+    est = est[0]
+    count+=1
+    print (cities[count], end='')
+    print(stores[count])
+    for index, i in  enumerate(est):
+        if i =='' or i=='0':
+            #print (positions[index])
+            netu+=[positions[index]]
+            print(netu)
+            wks.update_cell('AY'+str(count-1), str(netu[:]))
+            print(count)
+#print (positions)
+#print (est)
+
+#for index, string in enumerate(est):
+#    print (index, string)
 #kikoriki = wks.range('G3:AP3', returnas='range')
 #kikoriki.name = 'kikoriki'
-for i in est:
-    if i=='1':
-        print ('blya')
-#print (positions)
-print (est)
+
 
 
 # Update a cell with value (just to let him know values is updated ;) )
