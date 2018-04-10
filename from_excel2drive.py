@@ -1,6 +1,7 @@
 import pygsheets
 import openpyxl
 from openpyxl import Workbook
+ouf = open ('file.txt', 'w')
 gc = pygsheets.authorize(outh_file='client_secretxxx.json')
 sh=gc.open('Сегафредо')
 wks=sh[5]
@@ -33,13 +34,16 @@ for count in range (2,30):
     zeroes=[]
     count+=1
     print (cities[count-3], end='')
+    ouf.write('***  ' + cities[count-3] + ' ')
     print (stores[count-3])
+    ouf.write(stores[count-3] + '   ***' + '\n')
     for zero in range (7,43):
         zeroes +=[sheet.cell(row=count, column=zero).value]
     #print (zeroes)
     for index, i in enumerate (zeroes):
         if i==None or i==0:
             print (positions[index])
+            ouf.write(positions[index] + '\n')
             netu+=[positions[index]]
             sheet.cell(row=count-1, column =52, value=str(netu[:]))
 cities2 = [] # список городов
@@ -62,18 +66,21 @@ for count2 in range (2,6):
     zeroes2=[]
     count2+=1
     print (cities2[count2-3], end=' ')
+    ouf.write ('***   ' + cities2[count2-3])
     print (stores2[count2-3])
+    ouf.write(stores2[count2-3] + '   ***' + '\n')
     for zero2 in range (7,37):
         zeroes2 +=[sheet2.cell(row=count2, column=zero2).value]
     #print (zeroes)
     for index, j in enumerate (zeroes2):
         if j==None or j==0:
             print (positions2[index])
+            ouf.write(positions2[index] + '\n')
             netu2+=[positions2[index]]
             sheet2.cell(row=count2, column =45, value=str(netu2[:]))
 
 
-wb.save('Сегафредо1.xlsx')
+#wb.save('Сегафредо1.xlsx')
 #sheet.cell(coordinate="C3").value=3
 #print (sheet['AZ20'].value)
 wks.clear('BA3', 'BA30')
