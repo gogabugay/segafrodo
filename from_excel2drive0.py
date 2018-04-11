@@ -60,7 +60,7 @@ for count in range (2,30):
     ouf.write('***  ' + cities[count-3] + ' ')
     print (stores[count-3])
     ouf.write(stores[count-3] + '   ***' + '\n')
-    if dates[count-3] < wednesday:
+    if dates[count-3] < wednesday + timedelta(1):
         print ('Нет фотографий')
         net_fotok+=[str(cities[count-3]) +' '+ str(stores[count-3])]
         continue
@@ -93,10 +93,10 @@ for count2 in range (2,6):
     zeroes2=[]
     count2+=1
     print (cities2[count2-3], end=' ')
-    ouf.write ('***   ' + cities2[count2-3])
+    ouf.write ('***   ' + cities2[count2-3]+ ' ')
     print (stores2[count2-3])
     ouf.write(stores2[count2-3] + '   ***' + '\n')
-    if dates[count2-3] < wednesday:
+    if dates[count2-3] < wednesday + timedelta(1):
         print ('Нет фотографий')
         net_fotok+=[str(cities[count2-3]) +' '+ str(stores[count2-3])]
         continue
