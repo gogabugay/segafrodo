@@ -46,7 +46,7 @@ for store in range (3,31):
 dates = []
 for date in range (3,31):
     dates +=[sheet.cell(row=date, column=6).value.date()]
-print(dates)
+#print(dates)
 positions = [] # список товаров
 for position in range (7,43):
     positions +=[sheet.cell(row = 2, column = position).value]
@@ -62,6 +62,7 @@ for count in range (2,30):
     ouf.write(stores[count-3] + '   ***' + '\n')
     if dates[count-3] < wednesday + timedelta(1):
         print ('Нет фотографий')
+        ouf.write('Нет фотографий' + '\n')
         net_fotok+=[str(cities[count-3]) +' '+ str(stores[count-3])]
         continue
     for zero in range (7,43):
@@ -81,9 +82,13 @@ for city2 in range(3,31):
 
 stores2 = [] #список магазинов
 
-for store2 in range (3,31):
+for store2 in range (3,7):
     stores2 +=[sheet2.cell(row=store2, column=2).value]
 
+dates2 = []
+for date in range (3,7):
+    dates2 +=[sheet2.cell(row=date, column=7).value.date()]
+#print (dates2)
 positions2 = []
 for position2 in range (7,37):
     positions2 +=[sheet2.cell(row = 2, column = position2).value]
@@ -98,7 +103,8 @@ for count2 in range (2,6):
     ouf.write(stores2[count2-3] + '   ***' + '\n')
     if dates[count2-3] < wednesday + timedelta(1):
         print ('Нет фотографий')
-        net_fotok+=[str(cities[count2-3]) +' '+ str(stores[count2-3])]
+        ouf.write('Нет фотографий' + '\n')
+        net_fotok+=[str(cities2[count2-3]) +' '+ str(stores2[count2-3])]
         continue
     for zero2 in range (7,37):
         zeroes2 +=[sheet2.cell(row=count2, column=zero2).value]
@@ -117,9 +123,11 @@ ouf.write('\n' + 'Нет фотографий по:' + str(net_fotok[:]))
 #print (sheet['AZ20'].value)
 wks.clear('BA3', 'BA30')
 
+
 for count in range (3,31):
     wks.update_cell('BA'+str(count), sheet['AZ'+str(count-1)].value)
 wks2=sh[6]
+wks2.clear('AS3', 'AS6')
 count=0
 for count2 in range (3,7):
     wks2.update_cell('AS'+str(count2), sheet2['AS'+str(count2)].value)
