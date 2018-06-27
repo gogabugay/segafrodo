@@ -1,16 +1,33 @@
 import pygsheets
 import openpyxl
+import datetime
+from datetime import date, timedelta
 from openpyxl import Workbook
 ouf = open ('file.txt', 'w')
 gc = pygsheets.authorize(outh_file='client_secretxxx.json')
 sh=gc.open('Сегафредо')
 wks=sh[5]
 
+
 wb = openpyxl.load_workbook('Сегафредо.xlsx')
 #print(wb.get_sheet_names())
 sheet = wb['Ашан Регионы']
 sheet2 = wb['Окей Регионы']
 
+if date.today().weekday()==0: #определяем нужную среду
+    wednesday = date.today() + timedelta(2)
+elif date.today().weekday()==1:
+    wednesday = date.today() + timedelta(1)
+elif date.today().weekday()==2:
+    wednesday = date.today()
+elif date.today().weekday()==3:
+    wednesday = date.today() + timedelta(6)
+elif date.today().weekday()==4:
+    wednesday = date.today() + timedelta(5)
+elif date.today().weekday()==5:
+    wednesday = date.today() + timedelta(4)
+elif date.today().weekday()==6:
+    wednesday = date.today() + timedelta(3)
 
 cities = [] # список городов
 
@@ -88,6 +105,7 @@ wks.clear('BA3', 'BA30')
 for count in range (3,31):
     wks.update_cell('BA'+str(count), sheet['AZ'+str(count-1)].value)
 wks2=sh[6]
+wks2.clear('AS3', 'AS6')
 count=0
 for count2 in range (3,7):
     wks2.update_cell('AS'+str(count2), sheet2['AS'+str(count2)].value)

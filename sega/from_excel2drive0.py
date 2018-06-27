@@ -8,7 +8,7 @@ from openpyxl import Workbook
 ouf = open ('file.txt', 'w')
 gc = pygsheets.authorize(outh_file='client_secretxxx.json')
 sh=gc.open('Сегафредо')
-wks=sh[5]
+wks=sh.worksheet_by_title("Ашан Регионы")
 
 
 wb = openpyxl.load_workbook('Сегафредо.xlsx')
@@ -126,7 +126,7 @@ wks.clear('BB3', 'BB30')
 
 for count in range (3,31):
     wks.update_cell('BB'+str(count), sheet['AZ'+str(count-1)].value)
-wks2=sh[6]
+wks2=sh.worksheet_by_title("Окей Регионы")
 wks2.clear('AT3', 'AT6')
 count=0
 for count2 in range (3,7):

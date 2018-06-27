@@ -7,11 +7,11 @@ from datetime import date, timedelta
 from openpyxl import Workbook
 ouf = open ('file.txt', 'w')
 gc = pygsheets.authorize(outh_file='client_secretxxx.json')
-sh=gc.open('Copy of Сегафредо1')
+sh=gc.open('Сегафредо')
 wks=sh[5]
 
 
-wb = openpyxl.load_workbook('Copy of Сегафредо1.xlsx')
+wb = openpyxl.load_workbook('Сегафредо.xlsx')
 #print(wb.get_sheet_names())
 sheet = wb['Ашан Регионы']
 sheet2 = wb['Окей Регионы']
@@ -45,8 +45,8 @@ for store in range (3,31):
 #print (stores)
 
 dates = []
-for date in range (3,31):
-    dates +=[sheet.cell(row=date, column=6).value.date()]
+#for date in range (3,31):
+#    dates +=[sheet.cell(row=date, column=6).value.date()]
 #print(dates)
 positions = [] # список товаров
 for position in range (7,43):
@@ -61,11 +61,11 @@ for count in range (2,30):
     ouf.write('***  ' + cities[count-3] + ' ')
     print (stores[count-3])
     ouf.write(stores[count-3] + '   ***' + '\n')
-    if dates[count-3] < wednesday + timedelta(1):
-        print ('Нет фотографий')
-        ouf.write('Нет фотографий' + '\n')
-        net_fotok+=[str(cities[count-3]) +' '+ str(stores[count-3])]
-        continue
+#    if dates[count-3] < wednesday + timedelta(1):
+#        print ('Нет фотографий')
+#        ouf.write('Нет фотографий' + '\n')
+#        net_fotok+=[str(cities[count-3]) +' '+ str(stores[count-3])]
+#        continue
     for zero in range (7,43):
         zeroes +=[sheet.cell(row=count, column=zero).value]
     #print (zeroes)
@@ -122,16 +122,16 @@ for count2 in range (2,6):
 #print (sheet['AZ20'].value)
 wks.clear('BA3', 'BA30')
 
-stores_ma = [] #список магазинов
+'''stores_ma = [] #список магазинов
 
 for store in range (4,30):
     stores_ma +=[sheet_ma.cell(row=store, column=3).value]
-#print (stores)
+#print (stores)'''
 
 '''dates_ma = []
 for date_ma in range (3,31):
     dates_ma +=[sheet_ma.cell(row=date_ma, column=6).value.date()]
-#print(dates)'''
+#print(dates)
 positions_ma = [] # список товаров
 for position in range (7,43):
     positions_ma +=[sheet_ma.cell(row = 2, column = position).value]
@@ -142,11 +142,11 @@ for count_ma in range (2,30):
     count_ma+=1
     print (stores_ma[count_ma-2])
     ouf.write(stores_ma[count_ma-2] + '   ***' + '\n')
-    '''if dates_ma[count-3] < wednesday + timedelta(1):
+    if dates_ma[count-3] < wednesday + timedelta(1):
         print ('Нет фотографий')
         ouf.write('Нет фотографий' + '\n')
         net_fotok+=[str(stores[count-3])]
-        continue'''
+        continue
     for zero in range (7,43):
         zeroes_ma +=[sheet_ma.cell(row=count, column=zero).value]
     #print (zeroes)
@@ -155,7 +155,7 @@ for count_ma in range (2,30):
             print (positions_ma[index])
             ouf.write(positions_ma[index] + '\n')
             netu+=[positions_ma[index]]
-            sheet_ma.cell(row=count-1, column =52, value=str(netu_ma[:]))
+            sheet_ma.cell(row=count-1, column =52, value=str(netu_ma[:]))'''
 
 print ('Нет фотографий по:', str(net_fotok[:]))
 ouf.write('\n' + 'Нет фотографий по:' + str(net_fotok[:]))
@@ -166,7 +166,7 @@ wks2.clear('AS3', 'AS6')
 count=0
 for count2 in range (3,7):
     wks2.update_cell('AS'+str(count2), sheet2['AS'+str(count2)].value)
-wks_ma = sh [2]
+'''wks_ma = sh [2]
 wks_ma.clear('AZ3', 'AZ30')
 for count_ma in range (3,31):
-    wks_ma.update_cell('AZ'+str(count_ma), sheet_ma['AZ'+str(count_ma)].value)
+    wks_ma.update_cell('AZ'+str(count_ma), sheet_ma['AZ'+str(count_ma)].value)'''
